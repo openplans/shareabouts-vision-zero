@@ -1,11 +1,11 @@
 # Settings for the app
 app:
   # HTML Title
-  title: Shareabouts
+  title: Vision Zero Community Safety Map
   # Header name
-  name: Shareabouts
+  name: Vision Zero Community Safety Map
   # Meta description that will show up in Google search results
-  meta_description: _(Shareabouts is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.)
+  meta_description: _(Tell NYC DOT about traffic issues in your neighborhood)
 
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
@@ -18,133 +18,126 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: 39.9523524
-      lng: -75.1636075
-    zoom: 14
+      lat: 40.71435280167867
+      lng: -74.00597310159355
+    zoom: 12
     minZoom: 10
-    maxZoom: 17
+    maxZoom: 19
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    - url: /static/data/philadelphia.geojson
-      type: json
-      rules:
-        - condition: 'true'
-          style:
-            color: "#444"
-            opacity: 0.6
-            fillOpacity: 0.1
-            weight: 1
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  landmark:
-    label: _(Landmark)
+  doublepark:
+    label: _(Double Parking)
     rules:
-      - condition: '"{{location_type}}" === "landmark"'
-        # Display landmarks as icons
-
+      - condition: '"{{location_type}}" === "doublepark"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
-          iconSize: [17, 18]
+          iconUrl: /static/css/images/markers/dot-doublepark.png
+          iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
-
-        # style:
-        #   color: '#0d85e9'
-        #   radius: 8
-        #   weight: 1
-        #   opacity: 0.9
-        #   fillOpacity: 0.4
-        # focus_style:
-        #   color: '#0d85e9'
-        #   radius: 16
-        #   weight: 1
-        #   opacity: 0.9
-        #   fillOpacity: 0.4
-
-  park:
-    label: _(Park)
+          iconUrl: /static/css/images/markers/marker-doublepark.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]
+  jaywalking:
+    label: _(Jaywalking)
     rules:
-      - condition: '"{{location_type}}" === "park"'
-        # Show parks that are points as icons...
-
+      - condition: '"{{location_type}}" === "jaywalking"'
         icon:
-          iconUrl: /static/css/images/markers/dot-4bbd45.png
-          iconSize: [17, 18]
+          iconUrl: /static/css/images/markers/dot-jaywalking.png
+          iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-4bbd45.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
-
-        # ...and parks that are polygons as shapes.
-
-        style:
-          color: '#4bbd45'
-          radius: 8
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#4bbd45'
-          radius: 16
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-
-  school:
-    label: _(School)
+          iconUrl: /static/css/images/markers/marker-jaywalking.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]
+  longcross:
+    label: _(Long Cross)
     rules:
-      - condition: '"{{location_type}}" === "school" && {{submission_sets.comments.length}} > 0'
-        # Display schools as circles
-
-        # icon:
-        #   iconUrl: /static/css/images/markers/dot-f95016.png
-        #   iconSize: [17, 18]
-        #   iconAnchor: [9, 9]
-        # focus_icon:
-        #   iconUrl: /static/css/images/markers/marker-f95016.png
-        #   shadowUrl: /static/css/images/marker-shadow.png
-        #   iconSize: [25, 41]
-        #   shadowSize: [41, 41]
-        #   iconAnchor: [12, 41]
-
-        style:
-          color: '#f95016'
-          radius: 8
-          weight: 4
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#f95016'
-          radius: 16
-          weight: 4
-          opacity: 0.9
-          fillOpacity: 0.4
-      - condition: '"{{location_type}}" === "school"'
-        style:
-          color: '#f95016'
-          radius: 8
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#f95016'
-          radius: 16
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-
-
+      - condition: '"{{location_type}}" === "longcross"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-longcross.png
+          iconSize: [18, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-longcross.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]
+  longwait:
+    label: _(Long Wait)
+    rules:
+      - condition: '"{{location_type}}" === "longwait"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-longwait.png
+          iconSize: [18, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-longwait.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]          
+  notime:
+    label: _(No Time)
+    rules:
+      - condition: '"{{location_type}}" === "notime"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-notime.png
+          iconSize: [18, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-notime.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]
+  redlight:
+    label: _(Red Light)
+    rules:
+      - condition: '"{{location_type}}" === "redlight"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-redlight.png
+          iconSize: [18, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-redlight.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]
+  speeding:
+    label: _(Speeding)
+    rules:
+      - condition: '"{{location_type}}" === "speeding"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-speeding.png
+          iconSize: [18, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-speeding.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]
+  visibility:
+    label: _(Visibility)
+    rules:
+      - condition: '"{{location_type}}" === "visibility"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-visibility.png
+          iconSize: [18, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-visibility.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]
+  yield:
+    label: _(Failure to yield)
+    rules:
+      - condition: '"{{location_type}}" === "yield"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-yield.png
+          iconSize: [18, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-yield.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
   enabled: true
@@ -153,13 +146,13 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Add a Place)
+  add_button_label: _(Share a problem)
   # Labels for the buttons that toggle the map and list views
-  show_list_button_label: _(List All Places)
-  show_map_button_label: _(Show the Map)
+  show_list_button_label: _(Show as list)
+  show_map_button_label: _(Show on map)
   action_text: _(added)
   title: _(Tell us more...)
-  action_text: _(created)
+  action_text: _(reported)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
   items:
@@ -181,7 +174,7 @@ place:
           value: _(Email address)
         - key: size
           value: 30
-    - prompt: _(Location Name)
+    - prompt: _(Location)
       type: text
       name: name
       attrs:
@@ -195,12 +188,24 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Landmark)
-          value: landmark
-        - label: _(Park)
-          value: park
-        - label: _(School)
-          value: school
+        - label: _(Double Parking)
+          value: doublepark
+        - label: _(Jaywalking)
+          value: jaywalking
+        - label: _(Long Cross)
+          value: longcross
+        - label: _(Long Wait)
+          value: longwait
+        - label: _(No Time)
+          value: notime
+        - label: _(Red Light)
+          value: redlight
+        - label: _(Speeding)
+          value: speeding
+        - label: _(Visibility)
+          value: visibility
+        - label: _(Yield)
+          value: yield
       name: location_type
       attrs:
         - key: required
@@ -211,14 +216,6 @@ place:
       attrs:
         - key: placeholder
           value: _(Description...)
-    - prompt: _(Image)
-      inputfile_label: _(Add an Image)
-      type: file
-      name: my_image
-      optional: true
-      attrs:
-        - key: accept
-          value: image/*
 
 survey:
   submission_type: comments
@@ -258,26 +255,6 @@ pages:
     slug: about
     name: overview
     # start_page: true
-
-  - title: _(Why Shareabouts?)
-    slug: why
-    url: /static/pages/why.html
-
-  - title: _(Features)
-    slug: features
-    url: /static/pages/features.html
-
-  - title: _(Links)
-    pages:
-      - title: _(Documentation)
-        external: true
-        url: https://github.com/openplans/shareabouts/tree/master/doc
-      - title: _(Issues)
-        external: true
-        url: https://github.com/openplans/shareabouts/issues
-      - title: _(GitHub)
-        external: true
-        url: https://github.com/openplans/shareabouts
 
 notifications:
   on_new_place: true
