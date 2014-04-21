@@ -67,7 +67,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]
   longwait:
-    label: _(Long Wait)
+    label: _(Long Wait to Cross)
     rules:
       - condition: '"{{location_type}}" === "longwait"'
         icon:
@@ -79,7 +79,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]          
   notime:
-    label: _(No Time)
+    label: _(No Time To Cross)
     rules:
       - condition: '"{{location_type}}" === "notime"'
         icon:
@@ -91,7 +91,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]
   redlight:
-    label: _(Red Light)
+    label: _(Red Light Running)
     rules:
       - condition: '"{{location_type}}" === "redlight"'
         icon:
@@ -115,7 +115,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]
   visibility:
-    label: _(Visibility)
+    label: _(Visibility Problems)
     rules:
       - condition: '"{{location_type}}" === "visibility"'
         icon:
@@ -127,7 +127,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]
   yield:
-    label: _(Failure to yield)
+    label: _(Failure To Yield)
     rules:
       - condition: '"{{location_type}}" === "yield"'
         icon:
@@ -150,7 +150,7 @@ place:
   # Labels for the buttons that toggle the map and list views
   show_list_button_label: _(Show as list)
   show_map_button_label: _(Show on map)
-  action_text: _(added)
+  action_text: _(reported)
   title: _(Describe the issue at this intersection)
   help_text: _(Place the map marker at the intersection and tell us more about the problem you observed.)
   anonymous_name: _(Someone)
