@@ -1,0 +1,217 @@
+/* =Typography
+-------------------------------------------------------------- */
+
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Links */
+a, a:active, a:visited {
+  color: #f26522;
+}
+a:hover {
+  color: #f26522;
+}
+.response-date a:active, .response-date a:visited {
+  color: #333;
+}
+.response-date a:hover {
+  color: #f26522;
+}
+
+#sign-in-btn {
+  color: #f26522;
+}
+#sign-in-btn:hover {
+  color: #f26522;
+}
+
+/* Buttons */
+.btn,
+.btn:visited,
+.btn:link {
+  font-weight: 400;
+  background-color: #f26522;
+  color: #eee;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.btn:hover {
+  background-color: #f26522;
+  color: #fff;
+}
+#add-place,
+#add-place:hover {
+  font-weight: 800;
+  box-shadow: -3px 3px 10px rgba(85, 85, 85, 0.5);
+}
+.submit-btn {
+  font-size: 1.25em;
+  padding: 0.5em 1em;
+}
+.user-support label {
+  color: #eee;
+  font-weight: 400;
+}
+.user-support:hover label {
+  background-color: #f26522;
+  color: #fff;
+}
+
+
+/* =Header
+-------------------------------------------------------------- */
+
+#site-header {
+  background-color: #fff;
+}
+
+/* Logo */
+#site-title {
+  height: 2.5em;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#site-title a {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#site-logo {
+  height: 100%;
+  width: auto;
+}
+
+/* Navigation */
+#nav-btn {
+  font-family: "Helvetica Neue", Arial !important;
+  background-color: #eee;
+  color: #333;
+  text-shadow: none;
+}
+.access a,
+.access a:visited,
+.access a:active,
+.access a:link {
+  background-color: #f26522;
+  color: #fff;
+}
+
+
+/* =The Ticker
+-------------------------------------------------------------- */
+
+#ticker {
+  background-color: #fff;
+}
+.recent-points a {
+  color: #333;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
+}
+.recent-points a:hover {
+  color: #fff;
+  background: #f26522;
+  border-color: rgba(0,0,0,0.1);
+}
+
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#colophon {
+  background-color: #fff;
+  color: #333;
+}
+a.shareabouts-logo {
+  color: #00aaff;
+}
+a.shareabouts-logo:hover {
+  color: #007fbf;
+  border-bottom: 1px solid #00aaff;
+}
+#powered-by a.openplans-logo {
+  color: #ff9a52;
+}
+#powered-by a.openplans-logo:hover {
+  color: #ff8b38;
+  border-bottom: 1px solid #ffb885;
+}
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+
+@media only screen and (min-height: 440px) and (max-width: 60em) {
+}
+
+@media only screen and (min-height: 568px) and (max-width: 60em) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 60em) {
+}
+
+@media only screen and (min-width: 60em) {
+  #site-title {
+    height: 3.875em;
+  }
+  .access a:visited,
+  .access a:active,
+  .access a:link,
+  .access .btn {
+    color: #333;
+    background-color: #fff;
+  }
+  .access a:hover {
+    color: #fff;
+    background: #f26522;
+  }
+  
+  /* List View Button */
+  .list-toggle-nav {
+    float: left;
+  }
+  .list-toggle-btn,
+  .list-toggle-btn:visited,
+  .list-toggle-btn:link {
+    background-color: #f26522;
+    color: #eee;
+    min-width: 11.5em;
+  }
+  .list-toggle-btn:hover {
+    background-color: #f26522;
+    color: #fff;
+  }
+  .show-the-map:before {
+    content: '\27A4';
+    margin: 0 0.375em;
+    display: inline-block;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 30% 60%;
+        -ms-transform-origin: 30% 60%;
+            transform-origin: 30% 60%;
+
+  }
+  .show-the-list:before {
+    content: '\2630';
+    margin: 0 0.375em;
+    text-shadow: -0.25em 0 0 #f26522, -0.25em -1px 0 #f26522, -0.25em 1px 0 #f26522, -0.375em 0 0 #fff;
+  }
+
+}
+
+@media only screen and (min-width: 64em) {
+}
+
+@media only screen and (min-width: 74em) {
+}
+
+/* High Resolution Displays */
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+}
