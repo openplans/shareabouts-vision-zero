@@ -21,7 +21,7 @@ map:
       lat: 40.71435280167867
       lng: -74.00597310159355
     zoom: 12
-    minZoom: 10
+    minZoom: 11
     maxZoom: 19
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
@@ -151,10 +151,10 @@ place:
   show_list_button_label: _(Show as list)
   show_map_button_label: _(Show on map)
   action_text: _(added)
-  title: _(Tell us more...)
-  action_text: _(reported)
+  title: _(Describe the issue at this intersection)
+  help_text: _(Place the map marker at the intersection and tell us more about the problem you observed.)
   anonymous_name: _(Someone)
-  submit_button_label: _(Submit)
+  submit_button_label: _(Put on map)
   items:
     - prompt: _(Your Name)
       type: text
@@ -174,7 +174,7 @@ place:
           value: _(Email address)
         - key: size
           value: 30
-    - prompt: _(Location)
+    - prompt: _(Intersection)
       type: text
       name: name
       attrs:
@@ -183,7 +183,7 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(Location Type)
+    - prompt: _(Observered problem)
       type: select
       options:
         - label: _(Choose One)
@@ -209,7 +209,7 @@ place:
       name: location_type
       attrs:
         - key: required
-    - prompt: _(Description)
+    - prompt: _(Provide more information about the problem)
       type: textarea
       name: description
       optional: true
