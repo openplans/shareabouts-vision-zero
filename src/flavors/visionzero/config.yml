@@ -144,11 +144,11 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "other"'
         icon:
-          iconUrl: /static/css/images/markers/dot-yield.png
+          iconUrl: /static/css/images/markers/dot-unknown.png
           iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-yield.png
+          iconUrl: /static/css/images/markers/marker-unknown.png
           iconSize: [54, 80]
           iconAnchor: [27, 80]
 activity:
