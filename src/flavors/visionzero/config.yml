@@ -139,6 +139,18 @@ place_types:
           iconUrl: /static/css/images/markers/marker-yield.png
           iconSize: [54, 80]
           iconAnchor: [27, 80]
+  bike:
+    label: _(Cyclist Behavior)
+    rules:
+      - condition: '"{{location_type}}" === "bike"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-bike.png
+          iconSize: [18, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-bike.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]
   other:
     label: _(Other)
     rules:
@@ -219,6 +231,8 @@ place:
           value: visibility
         - label: _(Failure to yield)
           value: yield
+        - label: _(Cyclist Behavior)
+          value: bike
         - label: _(Other)
           value: other
       name: location_type
