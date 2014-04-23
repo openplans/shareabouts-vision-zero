@@ -26,12 +26,13 @@ map:
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    - url: http://{s}.tiles.mapbox.com/v3/openplans.162-Vision-Zero/{z}/{x}/{y}.png
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
   doublepark:
-    label: _(Double Parking)
+    label: _(Double parking)
     rules:
       - condition: '"{{location_type}}" === "doublepark"'
         icon:
@@ -55,7 +56,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]
   longcross:
-    label: _(Long Cross)
+    label: _(Long distance to cross)
     rules:
       - condition: '"{{location_type}}" === "longcross"'
         icon:
@@ -67,7 +68,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]
   longwait:
-    label: _(Long Wait to Cross)
+    label: _(Long wait to cross)
     rules:
       - condition: '"{{location_type}}" === "longwait"'
         icon:
@@ -79,7 +80,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]          
   notime:
-    label: _(No Time To Cross)
+    label: _(Not enough time to cross)
     rules:
       - condition: '"{{location_type}}" === "notime"'
         icon:
@@ -91,7 +92,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]
   redlight:
-    label: _(Red Light Running)
+    label: _(Red light running)
     rules:
       - condition: '"{{location_type}}" === "redlight"'
         icon:
@@ -115,7 +116,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]
   visibility:
-    label: _(Visibility Problems)
+    label: _(Poor visibility)
     rules:
       - condition: '"{{location_type}}" === "visibility"'
         icon:
@@ -127,9 +128,21 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]
   yield:
-    label: _(Failure To Yield)
+    label: _(Failure to yield)
     rules:
       - condition: '"{{location_type}}" === "yield"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-yield.png
+          iconSize: [18, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-yield.png
+          iconSize: [54, 80]
+          iconAnchor: [27, 80]
+  other:
+    label: _(Other)
+    rules:
+      - condition: '"{{location_type}}" === "other"'
         icon:
           iconUrl: /static/css/images/markers/dot-yield.png
           iconSize: [18, 18]
@@ -188,24 +201,26 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Double Parking)
+        - label: _(Double parking)
           value: doublepark
         - label: _(Jaywalking)
           value: jaywalking
-        - label: _(Long Cross)
+        - label: _(Long distance to cross)
           value: longcross
-        - label: _(Long Wait)
+        - label: _(Long wait to cross)
           value: longwait
-        - label: _(No Time)
+        - label: _(Not enough time to cross)
           value: notime
-        - label: _(Red Light)
+        - label: _(Red light running)
           value: redlight
         - label: _(Speeding)
           value: speeding
-        - label: _(Visibility)
+        - label: _(Poor visibility)
           value: visibility
-        - label: _(Yield)
+        - label: _(Failure to yield)
           value: yield
+        - label: _(Other)
+          value: other
       name: location_type
       attrs:
         - key: required
