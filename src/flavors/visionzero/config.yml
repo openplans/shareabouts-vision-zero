@@ -5,7 +5,7 @@ app:
   # Header name
   name: Vision Zero Community Safety Map
   # Meta description that will show up in Google search results
-  meta_description: _(Tell NYC DOT about traffic issues in your neighborhood)
+  meta_description: _(Vision Zero is the City's goal for ending traffic deaths and injuries on our streets. To accomplish this, we need everyone's participation and input.)
 
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
