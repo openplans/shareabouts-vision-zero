@@ -90,7 +90,36 @@
     } else {
       $target.addClass('is-open');
     }
-  })
+  });
+
+
+  var appViewInitialize = Shareabouts.AppView.prototype.initialize;
+  Shareabouts.AppView.prototype.initialize = function() {
+    appViewInitialize.call(this);
+
+    if (this.mapView.map.getZoom() >= 14) {
+      // hide the zoom message, show the add button
+      $('#zoom-in-msg').hide();
+      $('#add-place-btn-container').removeClass('is-hidden');
+    } else {
+      // hide the add button, show the zoom message
+      $('#zoom-in-msg').show();
+      $('#add-place-btn-container').addClass('is-hidden');
+    }
+
+    this.mapView.map.on('zoomend', function(evt) {
+      if (evt.target.getZoom() >= 14) {
+        // hide the zoom message, show the add button
+        $('#zoom-in-msg').hide();
+        $('#add-place-btn-container').removeClass('is-hidden');
+      } else {
+        // hide the add button, show the zoom message
+        $('#zoom-in-msg').show();
+        $('#add-place-btn-container').addClass('is-hidden');
+      }
+    });
+  }
+
 </script>
 
 {% endblock %}
