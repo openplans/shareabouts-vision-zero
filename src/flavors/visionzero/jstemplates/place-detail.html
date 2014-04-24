@@ -1,24 +1,23 @@
 {{> place-detail-promotion-bar }}
 
 <header class="place-header clearfix">
-  <h1>{{ name }}</h1>
+  <h1>{{ place_type_label location_type }}</h1>
   <span class="place-submission-details">
-    {{#_}}<strong class="point-submitter">
+    {{#_}} <strong class="point-submitter">
       {{#if submitter.avatar_url }}
         <img src="{{ submitter.avatar_url }}" class="avatar" />
       {{^}}
         <img src="{{ STATIC_URL }}/css/images/user-50.png" class="avatar" />
       {{/if}}
       {{#if submitter.name }}
-        {{ submitter.name }}
+        {{ action_text }} by {{ submitter.name }}.
       {{^}}
-        {{#if submitter_name }}
-          {{ submitter_name }}
+        {{#ifeq submitter_name "Someone"}}
         {{^}}
-          {{ anonymous_name }}
-        {{/if}}
+          {{ action_text }} by {{ submitter_name }}.
+        {{/ifeq}}
       {{/if}}
-    </strong> {{ action_text }} {{ place_type_label location_type}}
+    </strong>
 
     {{#if region}}
       in {{ region }}

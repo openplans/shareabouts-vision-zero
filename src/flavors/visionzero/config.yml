@@ -199,15 +199,6 @@ place:
           value: _(Email address)
         - key: size
           value: 30
-    - prompt: _(Intersection)
-      type: text
-      name: name
-      attrs:
-        - key: placeholder
-          value: _(Location Name)
-        - key: size
-          value: 30
-        - key: required
     - prompt: _(Observed problem)
       type: select
       options:
