@@ -280,10 +280,13 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(About)
+  - title: _(About Vision Zero)
     slug: about
     name: overview
-    # start_page: true
+  - title: _(Map Intro)
+    slug: intro
+    name: features
+    start_page: true
 
 notifications:
   on_new_place: true
