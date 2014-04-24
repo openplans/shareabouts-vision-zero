@@ -208,7 +208,7 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(Observered problem)
+    - prompt: _(Observed problem)
       type: select
       options:
         - label: _(Choose One)
