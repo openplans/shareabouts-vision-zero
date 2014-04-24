@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block site-title %}
+<a href="/"><img id="site-logo" src="{{ config.static_url }}css/images/visionzero-logo-blue-500.png"></a>
+{% endblock %}
+
+{% block meta %}
+  {% if place %}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ place.properties.name }}">
+    <meta name="twitter:description" content="{{ place.properties.description }}">
+    {% with attachment=place.properties.attachments|first %}
+    <meta name="twitter:image:src" content="{{ attachment.file }}">
+    {% endwith %}
+    {% comment %} TODO: Fill this in when we know if the username is from twitter
+      <meta name="twitter:creator" content="place.submitter.username">
+    {% endcomment %}
+
+    <!-- Facebook -->
+    <meta property="og:site_name" content="{{ config.app.title }}" />
+    <meta property="og:title" content="{{ place.properties.name }}" />
+    <meta property="og:description" content="{{ place.properties.description }}" />
+    {% with attachment=place.properties.attachments|first %}
+    <meta name="og:image" content="{{ attachment.file }}">
+    {% endwith %}
+  {% else %}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ config.app.title }}">
+    <meta name="twitter:description" content="{{ config.app.meta_description }}">
+
+    <!-- Facebook -->
+    <meta property="og:site_name" content="{{ config.app.title }}" />
+    <meta property="og:title" content="{{ config.app.title }}" />
+    <meta property="og:description" content="{{ config.app.meta_description }}" />
+  {% endif%}
+{% endblock %}
+
+<!--
+  This will place content at the top of the side bar
+ -->
+{% block sidebar %}
+<div class="legend">
+  <ul class="map-layer-list unstyled-list">
+    <li><span class="road-color" style="background-color:#fc7165;"></span>&nbsp;Pedestrian crash corridors (top 10% of streets in each borough)</li>
+    <li><img class="fatality" src="{{ config.static_url }}css/images/red-square-stroked-14.png">&nbsp;Pedestrian fatality (2009-14)</li>
+    <li><span class="road-color" style="background-color:#ffff99;"></span>&nbsp;Major arterial roads</li>
+  <li>We’re gathering feedback on these safety conditions:</li>
+  </ul>
+  <ul class="place-type-list unstyled-list">
+    <li><img src="{{ config.static_url }}css/images/icon-notime.png">&nbsp;<strong>Not enough time to cross</strong></li>
+    <li><img src="{{ config.static_url }}css/images/icon-doublepark.png">&nbsp;<strong>Double parking</strong></li>
+    <li><img src="{{ config.static_url }}css/images/icon-longwait.png">&nbsp;<strong>Long wait to cross</strong></li>
+    <li><img src="{{ config.static_url }}css/images/icon-redlight.png">&nbsp;<strong>Red light running</strong></li>
+    <li><img src="{{ config.static_url }}css/images/icon-jaywalking.png">&nbsp;<strong>Jaywalking</strong></li>
+    <li><img src="{{ config.static_url }}css/images/icon-visibility.png">&nbsp;<strong>Poor visibility</strong></li>
+    <li><img src="{{ config.static_url }}css/images/icon-speeding.png">&nbsp;<strong>Speeding</strong></li>
+    <li><img src="{{ config.static_url }}css/images/icon-longcross.png">&nbsp;<strong>Long distance to cross</strong></li>
+    <li><img src="{{ config.static_url }}css/images/icon-yield.png">&nbsp;<strong>Failure to yield</strong></li>
+    <li><img src="{{ config.static_url }}css/images/icon-bike.png">&nbsp;<strong>Cyclist behavior</strong></li>
+  </ul>
+</div>
+{% endblock %}
+
+<!--
+  This will place content in the colophon below the map
+ -->
+{% block colophon %}
+<p id="powered-by">{% blocktrans %}Powered by{% endblocktrans %} <a href="http://shareabouts.org/" class="shareabouts-logo" target="_blank">Shareabouts</a>, <span class="nobreak">a project of <a href="http://openplans.org/" class="openplans-logo" target="_blank">OpenPlans</a>.</span></p>
+{% endblock %}
+
+<!--
+  Analytics, custom JS, and such go here
+ -->
+{% block includes %}
+
+<script type="text/javascript">
+  $(document).delegate('.place-type-selector','click',function(evt){
+    var $target = $(evt.currentTarget),
+        $clicked = $(evt.target).closest('li'),
+        isOpen = $target.hasClass('is-open'),
+        value = $clicked.attr('data-value'),
+        $input = $('#place-location_type');
+    if(isOpen){
+      $input.val(value);
+      $target.find('li').removeClass('active');
+      $clicked.addClass('active');
+      $target.removeClass('is-open');
+    } else {
+      $target.addClass('is-open');
+    }
+  });
+
+
+  var appViewInitialize = Shareabouts.AppView.prototype.initialize;
+  Shareabouts.AppView.prototype.initialize = function() {
+    appViewInitialize.call(this);
+
+    if (this.mapView.map.getZoom() >= 14) {
+      // hide the zoom message, show the add button
+      $('#zoom-in-msg').hide();
+      $('#add-place-btn-container').removeClass('is-hidden');
+    } else {
+      // hide the add button, show the zoom message
+      $('#zoom-in-msg').show();
+      $('#add-place-btn-container').addClass('is-hidden');
+    }
+
+    this.mapView.map.on('zoomend', function(evt) {
+      if (evt.target.getZoom() >= 14) {
+        // hide the zoom message, show the add button
+        $('#zoom-in-msg').hide();
+        $('#add-place-btn-container').removeClass('is-hidden');
+      } else {
+        // hide the add button, show the zoom message
+        $('#zoom-in-msg').show();
+        $('#add-place-btn-container').addClass('is-hidden');
+      }
+    });
+  }
+
+</script>
+
+{% if settings.GOOGLE_ANALYTICS_ID %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '{{ settings.GOOGLE_ANALYTICS_ID }}', '{{ settings.GOOGLE_ANALYTICS_DOMAIN }}');
+</script>
+{% endif %}
+
+{% endblock %}
