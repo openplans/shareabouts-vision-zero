@@ -234,7 +234,9 @@ a.shareabouts-logo:hover {
   }
 
   /* Add space for NYC .upper-header */
-  #map-container {
+  #map-container,
+  #ticker,
+  #content {
     margin-top: 25px;
   }
 
