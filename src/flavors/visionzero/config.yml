@@ -190,16 +190,7 @@ place:
           value: _(Name)
         - key: size
           value: 30
-    - prompt: _(Your Email)
-      type: text
-      name: private-submitter_email
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Email address)
-        - key: size
-          value: 30
-    - prompt: _(Observed problem)
+    - prompt: _(Observed issue)
       type: select
       options:
         - label: _(Choose One)
@@ -229,14 +220,22 @@ place:
       name: location_type
       attrs:
         - key: required
-    - prompt: _(Provide more information about the problem)
+    - prompt: _(Provide more information about the issue)
       type: textarea
       name: description
       optional: true
       attrs:
         - key: placeholder
           value: _(Description...)
-
+    - prompt: _(Your Email)
+      type: text
+      name: private-submitter_email
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30
 survey:
   submission_type: comments
 
