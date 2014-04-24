@@ -140,7 +140,7 @@ place_types:
           iconSize: [54, 80]
           iconAnchor: [27, 80]
   bike:
-    label: _(Cyclist Behavior)
+    label: _(Cyclist behavior)
     rules:
       - condition: '"{{location_type}}" === "bike"'
         icon:
@@ -231,7 +231,7 @@ place:
           value: visibility
         - label: _(Failure to yield)
           value: yield
-        - label: _(Cyclist Behavior)
+        - label: _(Cyclist behavior)
           value: bike
         - label: _(Other)
           value: other
