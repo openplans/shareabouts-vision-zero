@@ -257,6 +257,23 @@ input:-moz-placeholder { color: #999; }
 }
 
 
+/* =Zoom Message
+-------------------------------------------------------------- */
+
+#zoom-in-msg {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  max-width: 300px;
+  z-index: 1;
+  padding: 0.625em;
+  color: #8D5251;
+  border: 1px solid #CFABAB;
+  background-color: rgba(242, 206, 206, 0.8);
+  border-radius: 4px;
+}
+
+
 /* =Media Queries
 -------------------------------------------------------------- */
 
