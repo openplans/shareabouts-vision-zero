@@ -143,7 +143,6 @@ a.shareabouts-logo:hover {
 }
 
 
-
 /* =NYC Header Bar
 -------------------------------------------------------------- */
 
@@ -179,6 +178,36 @@ a.shareabouts-logo:hover {
   position: relative;
   top: -2px;
 }
+
+
+/* =The Legend
+-------------------------------------------------------------- */
+
+.legend {
+  padding: 1em 0.5em 0.5em;
+  border-bottom: 1px solid #ddd;
+}
+.legend ul {
+  font-size: 0.875em;
+  padding: 0 0 0.75em;
+}
+.legend li {
+  padding: 0 0 0.5em;
+}
+.road-color {
+  padding-left: 1.75em;
+  display: inline-block;
+  height: 0.375em;
+  position: relative;
+  top: -0.125em;
+}
+.legend img {
+  height: 1.75em;
+  width: auto;
+  vertical-align: middle;
+}
+.map-layer-legend {}
+.place-type-legend {}
 
 
 /* =Media Queries
