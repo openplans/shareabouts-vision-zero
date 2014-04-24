@@ -66,6 +66,7 @@ a:hover {
 
 #site-header {
   background-color: #fff;
+  clear: both;
 }
 
 /* Logo */
@@ -156,8 +157,8 @@ a.shareabouts-logo:hover {
   font-weight: 700;
   line-height: 25px;
 }
-.upper-header-right { float: right; }
-.upper-header-left { float: left; }
+.upper-header-right { float: right; white-space: nowrap; }
+.upper-header-left { float: left; white-space: nowrap; }
 .small-nyc-logo {
   height: 15px;
   width: 40px;
@@ -166,6 +167,7 @@ a.shareabouts-logo:hover {
 .upper-header a {
   color: #fff;
   text-decoration: none;
+  white-space: nowrap;
 }
 .nyc-link {
   margin-right: -5px;
@@ -349,8 +351,27 @@ input:-moz-placeholder { color: #999; }
   /* Add space for NYC .upper-header */
   #map-container,
   #ticker,
-  #content {
+  #content,
+  #list-container {
     margin-top: 25px;
+  }
+
+  /* IE8 needs some stuff set again. And it doesn't do shadows. Ugh. */
+  .ie8 #site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd; 
+  }
+  .ie8 #site-title {
+  }
+  .ie8 #site-title a {
+  }
+  .ie8 #ticker {
+    border-left: 1px solid #ddd; 
+  }
+  .ie8 #colophon {
+    background-color: #fff;
+    color: #333;
+    border-top: 1px solid #ddd; 
   }
 
 }

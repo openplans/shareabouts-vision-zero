@@ -176,8 +176,8 @@ place:
   show_list_button_label: _(Show as list)
   show_map_button_label: _(Show on map)
   action_text: _(reported)
-  title: _(Describe the issue at this intersection)
-  help_text: _(Place the map marker at the intersection and tell us more about the problem you observed.)
+  title: _(Describe the issue)
+  help_text: _( )
   anonymous_name: _(Someone)
   submit_button_label: _(Put on map)
   items:
