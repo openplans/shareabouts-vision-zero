@@ -281,6 +281,19 @@ input:-moz-placeholder { color: #999; }
 }
 
 
+/* =About Page
+-------------------------------------------------------------- */
+
+.logos-three a {
+  float: left;
+  width: 33%;
+  padding: 0 10% 0 0;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
 /* =Media Queries
 -------------------------------------------------------------- */
 
