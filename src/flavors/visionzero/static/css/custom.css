@@ -143,17 +143,46 @@ a.shareabouts-logo:hover {
 }
 
 
-/* =Media Queries
+
+/* =NYC Header Bar
 -------------------------------------------------------------- */
 
-@media only screen and (min-height: 440px) and (max-width: 60em) {
+.upper-header {
+  background: #000;
+  color: #fff;
+  height: 25px;
+  margin: 0;
+  padding: 0 1.5em;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 25px;
+}
+.upper-header-right { float: right; }
+.upper-header-left { float: left; }
+.small-nyc-logo {
+  height: 15px;
+  width: 40px;
+  margin: 0 10px 0 -1px;
+}
+.upper-header a {
+  color: #fff;
+  text-decoration: none;
+}
+.nyc-link {
+  margin-right: -5px;
+  position: relative;
+  top: 2px;
+}
+.upper-header-divider {
+  margin: 0 5px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
 }
 
-@media only screen and (min-height: 568px) and (max-width: 60em) {
-}
 
-@media only screen and (min-width: 768px) and (max-width: 60em) {
-}
+/* =Media Queries
+-------------------------------------------------------------- */
 
 @media only screen and (min-width: 60em) {
   #site-title {
@@ -204,14 +233,9 @@ a.shareabouts-logo:hover {
     text-shadow: -0.25em 0 0 #f26522, -0.25em -1px 0 #f26522, -0.25em 1px 0 #f26522, -0.375em 0 0 #fff;
   }
 
-}
+  /* Add space for NYC .upper-header */
+  #map-container {
+    margin-top: 25px;
+  }
 
-@media only screen and (min-width: 64em) {
-}
-
-@media only screen and (min-width: 74em) {
-}
-
-/* High Resolution Displays */
-@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
 }
