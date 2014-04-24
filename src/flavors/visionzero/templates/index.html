@@ -43,12 +43,12 @@
  -->
 {% block sidebar %}
 <div class="legend">
-  <ul class="map-layer-legend unstyled-list">
+  <ul class="map-layer-list unstyled-list">
     <li><span class="road-color" style="background-color:#fc7165;"></span>&nbsp;Pedestrian Crash Corridor (top 10% of streets in borough)</li>
     <li><span class="road-color" style="background-color:#fff;"></span>&nbsp;Pedestrian fatality</li>
     <li><span class="road-color" style="background-color:#ffff99;"></span>&nbsp;Major arterial road</li>
   </ul>
-  <ul class="place-type-legend unstyled-list">
+  <ul class="place-type-list unstyled-list">
     <li><img src="{{ config.static_url }}css/images/icon-notime.png">&nbsp;<strong>Not Enough Time to Cross</strong></li>
     <li><img src="{{ config.static_url }}css/images/icon-doublepark.png">&nbsp;<strong>Double Parking</strong></li>
     <li><img src="{{ config.static_url }}css/images/icon-longwait.png">&nbsp;<strong>Long Wait to Cross</strong></li>
@@ -74,4 +74,23 @@
   Analytics, custom JS, and such go here
  -->
 {% block includes %}
+
+<script type="text/javascript">
+  $(document).delegate('.place-type-selector','click',function(evt){
+    var $target = $(evt.currentTarget),
+        $clicked = $(evt.target).closest('li'),
+        isOpen = $target.hasClass('is-open'),
+        value = $clicked.attr('data-value'),
+        $input = $('#place-location_type');
+    if(isOpen){
+      $input.val(value);
+      $target.find('li').removeClass('active');
+      $clicked.addClass('active');
+      $target.removeClass('is-open');
+    } else {
+      $target.addClass('is-open');
+    }
+  })
+</script>
+
 {% endblock %}

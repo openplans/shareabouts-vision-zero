@@ -191,8 +191,11 @@ a.shareabouts-logo:hover {
   font-size: 0.875em;
   padding: 0 0 0.75em;
 }
-.legend li {
+.map-layer-list li,
+.place-type-list li {
   padding: 0 0 0.5em;
+}
+.map-layer-list {
 }
 .road-color {
   padding-left: 1.75em;
@@ -201,13 +204,57 @@ a.shareabouts-logo:hover {
   position: relative;
   top: -0.125em;
 }
-.legend img {
+.place-type-list {
+}
+.place-type-list img {
   height: 1.75em;
   width: auto;
   vertical-align: middle;
 }
-.map-layer-legend {}
-.place-type-legend {}
+
+
+/* =Place Type Selector
+-------------------------------------------------------------- */
+
+.place-type-selector {
+  border: 0.25em solid #a3c7d9;
+  border-bottom: 0;
+  padding: 0;
+}
+.place-type-selector li {
+  cursor: pointer;
+  padding: 0.5em;
+  border-bottom: 0.25em solid #a3c7d9;
+  display: none;
+}
+.place-type-selector li:hover {
+  color: #203970;
+}
+.place-type-selector li.active,
+.place-type-selector.is-open li {
+  display: block;
+}
+.place-type-selector.is-open .prompt {
+  display: none;
+}
+
+.place-type-selector .prompt,
+.place-type-selector .prompt:hover {
+  color: #999;
+  border-top: 0;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}
+/* Match the prompt and placeholder color. */
+::-webkit-input-placeholder { color: #999; }
+::-moz-placeholder { color: #999; }
+:-ms-input-placeholder { color: #999; }
+input:-moz-placeholder { color: #999; }
+
+/* Put form items in <div> instead of <p> (<p> cannot contain block elements like <ul>). */
+.form-item-container {
+  margin: 0 0 1.5em;
+}
 
 
 /* =Media Queries
