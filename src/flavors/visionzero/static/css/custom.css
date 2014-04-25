@@ -54,6 +54,11 @@ a:hover {
 .user-support label {
   color: #eee;
   font-weight: 400;
+  background: none;
+  padding: 0;
+}
+.user-support input[type=checkbox]:checked ~ label {
+  background-image: none;
 }
 .user-support:hover label {
   background-color: #f26522;
@@ -270,16 +275,17 @@ input:-moz-placeholder { color: #999; }
 -------------------------------------------------------------- */
 
 #zoom-in-msg {
-  position: absolute;
-  top: 10px;
-  left: 50px;
-  max-width: 300px;
+  text-align: center;
   z-index: 1;
   padding: 0.625em;
-  color: #8D5251;
-  border: 1px solid #CFABAB;
-  background-color: rgba(242, 206, 206, 0.8);
+  color: #333;
+  border: 1px solid rgba(0,0,0,0.1);
+  background-color: rgba(238, 238, 238, 0.8);
   border-radius: 4px;
+  position: absolute;
+  bottom: 0.5em;
+  right: 0.5em;
+  left: 0.5em;
 }
 
 
@@ -314,7 +320,7 @@ input:-moz-placeholder { color: #999; }
     color: #fff;
     background: #f26522;
   }
-  
+
   /* List View Button */
   .list-toggle-nav {
     float: left;
@@ -359,19 +365,19 @@ input:-moz-placeholder { color: #999; }
   /* IE8 needs some stuff set again. And it doesn't do shadows. Ugh. */
   .ie8 #site-header {
     background-color: #fff;
-    border-bottom: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd;
   }
   .ie8 #site-title {
   }
   .ie8 #site-title a {
   }
   .ie8 #ticker {
-    border-left: 1px solid #ddd; 
+    border-left: 1px solid #ddd;
   }
   .ie8 #colophon {
     background-color: #fff;
     color: #333;
-    border-top: 1px solid #ddd; 
+    border-top: 1px solid #ddd;
   }
 
 }
