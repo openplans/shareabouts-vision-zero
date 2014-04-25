@@ -54,6 +54,11 @@ a:hover {
 .user-support label {
   color: #eee;
   font-weight: 400;
+  background: none;
+  padding: 0;
+}
+.user-support input[type=checkbox]:checked ~ label {
+  background-image: none;
 }
 .user-support:hover label {
   background-color: #f26522;
