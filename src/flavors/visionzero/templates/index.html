@@ -135,14 +135,42 @@
 
     // Hide the ticker/legend when adding a new place
     this.options.router.on('route', function(route, params) {
-      if(route === 'newPlace') {
-        $('body').removeClass('activity-enabled');
-      } else  {
-        $('body').addClass('activity-enabled');
+      var $body = $('body'),
+          center = self.mapView.map.getCenter(),
+          // Is the activity hidden right now?
+          zoomToCenter = $body.hasClass('activity-enabled') === false;
+
+      // If we're showing anything other than a new place
+      if(route !== 'newPlace') {
+        // Show the ticker and invalidate the map size
+        $body.addClass('activity-enabled');
+        self.mapView.map.invalidateSize({pan: false});
+
+        // If we're turning the activity back on, then we need to recenter the
+        // map. ie. I just added a place to the map and it will be covered up
+        // if we don't do this.
+        if (zoomToCenter) {
+          self.mapView.map.panTo(center);
+        }
       }
-      self.mapView.map.invalidateSize(true);
     });
   };
+
+  var appViewOnAddPlace = Shareabouts.AppView.prototype.onAddPlace;
+  Shareabouts.AppView.prototype.onAddPlace = function(model) {
+    var center = this.mapView.map.getCenter();
+
+    appViewOnAddPlace.call(this, model);
+
+    // If the we're adding a new place, we need to capture the center point
+    // before the panel is opened. This is so we can pan back to it afterwards.
+    if (model.isNew()) {
+      $('body').removeClass('activity-enabled');
+      this.mapView.map.invalidateSize({pan: false});
+      this.mapView.map.panTo(center, {animate: true});
+    }
+  };
+
 </script>
 
 {% if settings.GOOGLE_ANALYTICS_ID %}
