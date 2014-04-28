@@ -98,7 +98,8 @@
   Shareabouts.AppView.prototype.initialize = function() {
     appViewInitialize.call(this);
 
-    var $zoomInMsg = $('#zoom-in-msg'),
+    var self = this,
+        $zoomInMsg = $('#zoom-in-msg'),
         $addBtn = $('#add-place')
 
     if (this.mapView.map.getZoom() >= 14) {
@@ -122,8 +123,17 @@
         $addBtn.addClass('is-hidden');
       }
     });
-  }
 
+    // Hide the ticker/legend when adding a new place
+    this.options.router.on('route', function(route, params) {
+      if(route === 'newPlace') {
+        $('body').removeClass('activity-enabled');
+      } else  {
+        $('body').addClass('activity-enabled');
+      }
+      self.mapView.map.invalidateSize(true);
+    });
+  };
 </script>
 
 {% if settings.GOOGLE_ANALYTICS_ID %}

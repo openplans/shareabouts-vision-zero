@@ -369,6 +369,14 @@ input:-moz-placeholder { color: #999; }
     margin-top: 25px;
   }
 
+  #content {
+    left: 60%;
+  }
+
+  .content-visible #map-container {
+    width: 60%;
+  }
+
   /* IE8 needs some stuff set again. And it doesn't do shadows. Ugh. */
   .ie8 #site-header {
     background-color: #fff;
