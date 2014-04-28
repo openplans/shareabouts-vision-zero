@@ -43,6 +43,10 @@
  -->
 {% block sidebar %}
 <div class="legend">
+  <div class="legend-add-container">
+    <a href="#" class="btn btn-block btn-primary btn-medium add-place-btn"><span>{{ config.place.add_button_label }}</span></a>
+    <div class="zoom-in-msg">Please zoom in to share an issue.</div>
+  </div>
   <ul class="map-layer-list unstyled-list">
     <li><span class="road-color" style="background-color:#fc7165;"></span>&nbsp;Pedestrian crash corridors (top 10% of streets in each borough)</li>
     <li><img class="fatality" src="{{ config.static_url }}css/images/red-square-stroked-14.png">&nbsp;Pedestrian fatality (2009-14)</li>
@@ -99,29 +103,34 @@
     appViewInitialize.call(this);
 
     var self = this,
-        $zoomInMsg = $('#zoom-in-msg'),
-        $addBtn = $('#add-place')
+        $zoomInMsg = $('.zoom-in-msg'),
+        $addBtn = $('.add-place-btn'),
+        $legendAddBtn = $('.legend .add-place-btn');
 
     if (this.mapView.map.getZoom() >= 14) {
       // hide the zoom message, show the add button
       $zoomInMsg.hide();
-      $addBtn.removeClass('is-hidden');
+      $addBtn.show().removeClass('is-hidden');
     } else {
       // hide the add button, show the zoom message
       $zoomInMsg.show();
-      $addBtn.addClass('is-hidden');
+      $addBtn.hide().addClass('is-hidden');
     }
 
     this.mapView.map.on('zoomend', function(evt) {
       if (evt.target.getZoom() >= 14) {
         // hide the zoom message, show the add button
         $zoomInMsg.hide();
-        $addBtn.removeClass('is-hidden');
+        $addBtn.show().removeClass('is-hidden');
       } else {
         // hide the add button, show the zoom message
         $zoomInMsg.show();
-        $addBtn.addClass('is-hidden');
+        $addBtn.hide().addClass('is-hidden');
       }
+    });
+
+    $legendAddBtn.click(function() {
+      self.options.router.navigate('place/new', {trigger: true});
     });
 
     // Hide the ticker/legend when adding a new place
