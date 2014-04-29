@@ -162,7 +162,8 @@ a.shareabouts-logo:hover {
   font-weight: 700;
   line-height: 25px;
 }
-.upper-header-right { float: right; white-space: nowrap; }
+
+.upper-header-right { float: right; white-space: nowrap; display: none; }
 .upper-header-left { float: left; white-space: nowrap; }
 .small-nyc-logo {
   height: 15px;
@@ -311,6 +312,11 @@ input:-moz-placeholder { color: #999; }
 /* =Media Queries
 -------------------------------------------------------------- */
 
+@media only screen and (min-width: 768px) and (max-width: 60em) {
+  .upper-header-right { display: inline; }
+}
+
+
 @media only screen and (min-width: 60em) {
   #site-title {
     height: 3.875em;
@@ -380,6 +386,8 @@ input:-moz-placeholder { color: #999; }
     display: block;
     margin-bottom: 0.5em;
   }
+
+  .upper-header-right { display: inline; }
 
   /* IE8 needs some stuff set again. And it doesn't do shadows. Ugh. */
   .ie8 #site-header {
