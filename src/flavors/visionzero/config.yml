@@ -273,6 +273,9 @@ pages:
   - title: _(About)
     slug: about
     name: overview
+  - title: _(Workshops)
+    slug: workshops
+    name: why
 
 notifications:
   on_new_place: true
