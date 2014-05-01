@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load shareabouts_utils %}
 
 {% block site-title %}
 <a href="/"><img id="site-logo" src="{{ config.static_url }}css/images/visionzero-logo-blue-500.png"></a>
@@ -9,32 +10,42 @@
   {% if place %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ place.properties.name }}">
-    <meta name="twitter:description" content="{{ place.properties.description }}">
-    {% with attachment=place.properties.attachments|first %}
-    <meta name="twitter:image:src" content="{{ attachment.file }}">
+    {% with place_type=config.place_types|get_item:place.properties.location_type %}
+    <meta name="twitter:title" content="{{ place_type.label }}">
     {% endwith %}
-    {% comment %} TODO: Fill this in when we know if the username is from twitter
-      <meta name="twitter:creator" content="place.submitter.username">
-    {% endcomment %}
+    <meta name="twitter:description" content="{{ place.properties.description }}">
+
+    {% if place.properties.location_type and place.properties.location_type != "other"%}
+    <meta name="twitter:image:src" content="{{ STATIC_URL }}decals/{{place.properties.location_type}}.png">
+    {% else %}
+    <meta name="twitter:image:src" content="{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
+    {% endif %}
 
     <!-- Facebook -->
     <meta property="og:site_name" content="{{ config.app.title }}" />
-    <meta property="og:title" content="{{ place.properties.name }}" />
-    <meta property="og:description" content="{{ place.properties.description }}" />
-    {% with attachment=place.properties.attachments|first %}
-    <meta name="og:image" content="{{ attachment.file }}">
+    {% with place_type=config.place_types|get_item:place.properties.location_type %}
+    <meta property="og:title" content="{{ place_type.label }}" />
     {% endwith %}
+    <meta property="og:description" content="{{ place.properties.description }}" />
+
+    {% if place.properties.location_type and place.properties.location_type != "other"%}
+    <meta name="og:image" content="{{ STATIC_URL }}decals/{{place.properties.location_type}}.png">
+    {% else %}
+    <meta name="og:image" content="{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
+    {% endif %}
+
   {% else %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ config.app.title }}">
     <meta name="twitter:description" content="{{ config.app.meta_description }}">
+    <meta name="twitter:image:src" content="{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
 
     <!-- Facebook -->
     <meta property="og:site_name" content="{{ config.app.title }}" />
     <meta property="og:title" content="{{ config.app.title }}" />
     <meta property="og:description" content="{{ config.app.meta_description }}" />
+    <meta name="og:image" content="{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
   {% endif%}
 {% endblock %}
 
