@@ -57,6 +57,11 @@
         <li data-value="other"><img src="{{ STATIC_URL }}css/images/icon-unknown.png">&nbsp;<strong>Other</strong></li>
       </ul>
       <input type="hidden" id="place-{{ name }}" name="{{ name }}" value="other">
+
+      {{#is name 'location_type'}}
+      <p class="other-type-instructions is-hidden">Suggestions on this site will be used for a safety plan. Have a street defect or faded marking you would like repaired? Contact <a href="http://www.nyc.gov/html/dot/html/contact/contact-form.shtml">DOT</a> or call <a href="http://nyc.gov/311">311</a>.</p>
+      {{/is}}
+
       <!-- <select class="is-hiddenx" id="place-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
         {{# options }}
           {{#if label}}
