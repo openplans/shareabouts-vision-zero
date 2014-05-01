@@ -16,7 +16,7 @@
     <meta name="twitter:description" content="{{ place.properties.description }}">
 
     {% if place.properties.location_type and place.properties.location_type != "other"%}
-    <meta name="twitter:image:src" content="{{ STATIC_URL }}css/images/VisionZero_{{place.properties.location_type}}_Icon.png">
+    <meta name="twitter:image:src" content="{{ STATIC_URL }}decals/{{place.properties.location_type}}.png">
     {% else %}
     <meta name="twitter:image:src" content="{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
     {% endif %}
@@ -29,7 +29,7 @@
     <meta property="og:description" content="{{ place.properties.description }}" />
 
     {% if place.properties.location_type and place.properties.location_type != "other"%}
-    <meta name="og:image" content="{{ STATIC_URL }}css/images/VisionZero_{{place.properties.location_type}}_Icon.png">
+    <meta name="og:image" content="{{ STATIC_URL }}decals/{{place.properties.location_type}}.png">
     {% else %}
     <meta name="og:image" content="{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
     {% endif %}
