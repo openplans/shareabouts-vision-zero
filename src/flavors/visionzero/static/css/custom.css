@@ -316,11 +316,11 @@ input:-moz-placeholder { color: #999; }
   .upper-header-right { display: inline; }
 }
 
-
 @media only screen and (min-width: 60em) {
   #site-title {
     height: 3.875em;
   }
+  
   .access a:visited,
   .access a:active,
   .access a:link,
@@ -332,7 +332,8 @@ input:-moz-placeholder { color: #999; }
     color: #fff;
     background: #f26522;
   }
-
+  
+  
   /* List View Button */
   .list-toggle-nav {
     float: left;
