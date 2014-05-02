@@ -12,6 +12,9 @@ app:
   # server. If you would like to override the chunk size, use this setting:
   # places_page_size: 100
 
+  # Optional. List view is supported by default. Set to false to disable.
+  list_enabled: false
+
 # Settings for map and layer configs
 map:
   geolocation_enabled: true
@@ -40,10 +43,10 @@ place_types:
           iconSize: [9, 9]
           iconAnchor: [4, 4]
       - condition: '"{{location_type}}" === "doublepark" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/dot-doublepark.png
           iconSize: [18, 18]
-          iconAnchor: [9, 9]  
+          iconAnchor: [9, 9]
       - condition: '"{{location_type}}" === "doublepark" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-doublepark.png
@@ -66,7 +69,7 @@ place_types:
         icon:
           iconUrl: /static/css/images/markers/marker-jaywalking.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]              
+          iconAnchor: [27, 80]
   longcross:
     label: _(Long distance to cross)
     rules:
@@ -92,7 +95,7 @@ place_types:
         icon:
           iconUrl: /static/css/images/markers/dot-longwait.png
           iconSize: [9, 9]
-          iconAnchor: [4, 4]   
+          iconAnchor: [4, 4]
       - condition: '"{{location_type}}" === "longwait"  && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-longwait.png
@@ -102,7 +105,7 @@ place_types:
         icon:
           iconUrl: /static/css/images/markers/marker-longwait.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]        
+          iconAnchor: [27, 80]
   notime:
     label: _(Not enough time to cross)
     rules:
@@ -210,7 +213,7 @@ place_types:
         icon:
           iconUrl: /static/css/images/markers/marker-bike.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]              
+          iconAnchor: [27, 80]
   other:
     label: _(Other)
     rules:
