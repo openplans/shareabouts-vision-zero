@@ -25,10 +25,12 @@ var Shareabouts = Shareabouts || {};
     },
     initialize: function(){
       var self = this,
+          // Only include submissions if the list view is enabled (anything but false)
+          includeSubmissions = S.Config.flavor.app.list_enabled !== false,
           placeParams = {
             // NOTE: this is to simply support the list view. It won't
             // scale well, so let's think about a better solution.
-            include_submissions: true
+            include_submissions: includeSubmissions
           };
 
       // Use the page size as dictated by the server by default, unless
@@ -133,10 +135,16 @@ var Shareabouts = Shareabouts || {};
         placeTypes: this.options.placeTypes
       });
 
-      this.listView = new S.PlaceListView({
-        el: '#list-container',
-        collection: this.collection
-      }).render();
+
+      // List view is enabled by default (undefined) or by enabling it
+      // explicitly. Set it to a falsey value to disable activity.
+      if (_.isUndefined(S.Config.flavor.app.list_enabled) ||
+        S.Config.flavor.app.list_enabled) {
+          this.listView = new S.PlaceListView({
+            el: '#list-container',
+            collection: this.collection
+          }).render();
+      }
 
       // Cache panel elements that we use a lot
       this.$panel = $('#content');
@@ -187,8 +195,10 @@ var Shareabouts = Shareabouts || {};
 
         success: function() {
           // Sort the list view after all of the pages have been fetched
-          self.listView.sort();
-          self.listView.updateSortLinks();
+          if (self.listView) {
+            self.listView.sort();
+            self.listView.updateSortLinks();
+          }
         },
 
         // Only do this for the first page...
@@ -310,6 +320,7 @@ var Shareabouts = Shareabouts || {};
     },
     viewPlace: function(model, responseId, zoom) {
       var self = this,
+          includeSubmissions = S.Config.flavor.app.list_enabled !== false,
           onPlaceFound, onPlaceNotFound, modelId;
 
       onPlaceFound = function(model) {
@@ -390,7 +401,7 @@ var Shareabouts = Shareabouts || {};
           success: onPlaceFound,
           error: onPlaceNotFound,
           data: {
-            include_submissions: true
+            include_submissions: includeSubmissions
           }
         });
       }
