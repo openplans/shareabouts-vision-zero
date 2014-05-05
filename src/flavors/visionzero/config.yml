@@ -36,199 +36,287 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "doublepark" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-doublepark.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]
-      - condition: '"{{location_type}}" === "doublepark" && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-doublepark-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "doublepark" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon: 
           iconUrl: /static/css/images/markers/dot-doublepark.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]  
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]  
+      - condition: '"{{location_type}}" === "doublepark" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-doublepark.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "doublepark" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-doublepark.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
   jaywalking:
     label: _(Jaywalking)
     rules:
       - condition: '"{{location_type}}" === "jaywalking" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-jaywalking.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]
-      - condition: '"{{location_type}}" === "jaywalking" && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-jaywalking-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "jaywalking" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-jaywalking.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]
+      - condition: '"{{location_type}}" === "jaywalking" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-jaywalking.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "jaywalking" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-jaywalking.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]              
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
   longcross:
     label: _(Long distance to cross)
     rules:
       - condition: '"{{location_type}}" === "longcross" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-longcross.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]
-      - condition: '"{{location_type}}" === "longcross" && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-longcross-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "longcross" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-longcross.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]
+      - condition: '"{{location_type}}" === "longcross" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-longcross.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "longcross" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-longcross.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
   longwait:
     label: _(Long wait to cross)
     rules:
       - condition: '"{{location_type}}" === "longwait"  && {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-longwait.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]   
-      - condition: '"{{location_type}}" === "longwait"  && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-longwait-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "longwait"  && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-longwait.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]
+      - condition: '"{{location_type}}" === "longwait" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-longwait.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "longwait" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-longwait.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]        
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
   notime:
     label: _(Not enough time to cross)
     rules:
       - condition: '"{{location_type}}" === "notime" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-notime.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]
-      - condition: '"{{location_type}}" === "notime" && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-notime-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "notime" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-notime.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]
+      - condition: '"{{location_type}}" === "notime" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-notime.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "notime" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-notime.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
   redlight:
     label: _(Red light running)
     rules:
       - condition: '"{{location_type}}" === "redlight" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-redlight.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]
-      - condition: '"{{location_type}}" === "redlight" && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-redlight-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "redlight" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-redlight.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]
+      - condition: '"{{location_type}}" === "redlight" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-redlight.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "redlight" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-redlight.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
   speeding:
     label: _(Speeding)
     rules:
       - condition: '"{{location_type}}" === "speeding" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-speeding.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]
-      - condition: '"{{location_type}}" === "speeding" && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-speeding-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "speeding" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-speeding.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]
+      - condition: '"{{location_type}}" === "speeding" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-speeding.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "speeding" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-speeding.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
   visibility:
     label: _(Poor visibility)
     rules:
       - condition: '"{{location_type}}" === "visibility" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-visibility.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]
-      - condition: '"{{location_type}}" === "visibility" && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-visibility-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "visibility" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-visibility.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]
+      - condition: '"{{location_type}}" === "visibility" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-visibility.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "visibility" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-visibility.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
   yield:
     label: _(Failure to yield)
     rules:
       - condition: '"{{location_type}}" === "yield" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-yield.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]
-      - condition: '"{{location_type}}" === "yield" && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-yield-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "yield" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-yield.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]
+      - condition: '"{{location_type}}" === "yield" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-yield.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "yield" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-yield.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
   bike:
     label: _(Cyclist behavior)
     rules:
       - condition: '"{{location_type}}" === "bike"&& {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-bike.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]
-      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-bike-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-bike.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]
+      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-bike.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "bike" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-bike.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]              
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
   other:
     label: _(Other)
     rules:
       - condition: '"{{location_type}}" === "other" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-unknown.png
-          iconSize: [9, 9]
-          iconAnchor: [4, 4]
-      - condition: '"{{location_type}}" === "other" && {{map.zoom}} >= 15 && {{layer.focused}} === false'
+          iconUrl: /static/css/images/markers/dot-unknown-sm.png
+          iconSize: [10, 10]
+          iconAnchor: [5, 5]
+      - condition: '"{{location_type}}" === "other" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-unknown.png
-          iconSize: [18, 18]
-          iconAnchor: [9, 9]
+          iconSize: [22, 22]
+          iconAnchor: [11, 11]
+      - condition: '"{{location_type}}" === "other" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
+        icon: 
+          iconUrl: /static/css/images/markers/icon-dot-unknown.png
+          iconSize: [32, 33]
+          iconAnchor: [16, 16]  
       - condition: '"{{location_type}}" === "other" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-unknown.png
           iconSize: [54, 80]
-          iconAnchor: [27, 80]
+          iconAnchor: [27, 77]
+          shadowUrl: /static/css/images/markers/marker-shadow.png
+          shadowSize: [68, 31]
+          shadowAnchor: [34, 31]
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
   enabled: true
