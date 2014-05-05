@@ -41,7 +41,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "doublepark" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon: 
-          iconUrl: /static/css/images/markers/dot-doublepark.png
+          iconUrl: /static/css/images/markers/dot-doublepark-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]  
       - condition: '"{{location_type}}" === "doublepark" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
@@ -67,7 +67,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "jaywalking" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-jaywalking.png
+          iconUrl: /static/css/images/markers/dot-jaywalking-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "jaywalking" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
@@ -93,7 +93,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "longcross" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-longcross.png
+          iconUrl: /static/css/images/markers/dot-longcross-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "longcross" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
@@ -119,7 +119,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "longwait"  && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-longwait.png
+          iconUrl: /static/css/images/markers/dot-longwait-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "longwait" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
@@ -145,7 +145,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "notime" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-notime.png
+          iconUrl: /static/css/images/markers/dot-notime-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "notime" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
@@ -171,7 +171,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "redlight" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-redlight.png
+          iconUrl: /static/css/images/markers/dot-redlight-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "redlight" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
@@ -197,7 +197,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "speeding" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-speeding.png
+          iconUrl: /static/css/images/markers/dot-speeding-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "speeding" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
@@ -223,7 +223,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "visibility" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-visibility.png
+          iconUrl: /static/css/images/markers/dot-visibility-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "visibility" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
@@ -249,7 +249,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "yield" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-yield.png
+          iconUrl: /static/css/images/markers/dot-yield-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "yield" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
@@ -275,7 +275,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "bike" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-bike.png
+          iconUrl: /static/css/images/markers/dot-bike-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "bike" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
@@ -301,7 +301,7 @@ place_types:
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "other" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-unknown.png
+          iconUrl: /static/css/images/markers/dot-unknown-m.png
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "other" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
