@@ -323,6 +323,25 @@ input:-moz-placeholder { color: #999; }
 }
 
 
+/* =Center Point (new point icon)
+-------------------------------------------------------------- */
+
+#centerpoint.newpin .x {
+  background: transparent url(images/marker-x-visionzero.png) 0 0 no-repeat scroll;
+}
+#centerpoint.newpin .marker {
+  width: 54px;
+  height: 80px;
+  background: transparent url(images/marker-plus-visionzero.png) 0 0 no-repeat scroll;
+  top: -36px;
+  left: -14px;
+}
+#centerpoint.newpin:hover .marker,
+#centerpoint.newpin.dragging .marker {
+  top: -66px;
+}
+
+
 /* =Media Queries
 -------------------------------------------------------------- */
 
