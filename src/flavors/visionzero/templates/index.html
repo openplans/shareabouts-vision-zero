@@ -31,7 +31,7 @@
     {% if place.properties.location_type and place.properties.location_type != "other"%}
     <meta name="og:image" content="{{ STATIC_URL }}decals/{{place.properties.location_type}}.png">
     {% else %}
-    <meta name="og:image" content="{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
+    <meta name="og:image" content="{{ STATIC_URL }}css/images/map-screenshot.jpg">
     {% endif %}
 
   {% else %}
@@ -45,7 +45,7 @@
     <meta property="og:site_name" content="{{ config.app.title }}" />
     <meta property="og:title" content="{{ config.app.title }}" />
     <meta property="og:description" content="{{ config.app.meta_description }}" />
-    <meta name="og:image" content="{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
+    <meta name="og:image" content="{{ STATIC_URL }}css/images/map-screenshot.jpg">
   {% endif%}
 {% endblock %}
 
