@@ -5,7 +5,7 @@ Shareabouts is an online mapping tool to gather crowdsourced public input in a s
 
 Read more about Shareabouts and find links to recent sites [on the OpenPlans website](http://openplans.org/shareabouts/).
 
-Problems? Ideas? Let us know!
+Problems or ideas? Let us know!
 --------------------
 
 We strongly welcome your feature suggestions. [Check out our roadmap](https://trello.com/b/94MT3WRQ/openplans-roadmap) and help us with prioritizing by commenting on the features you'd like to see. If you encounted a bug, [create an issue](https://github.com/openplans/shareabouts/issues) on this GitHub repo.

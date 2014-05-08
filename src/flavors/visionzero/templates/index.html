@@ -16,9 +16,9 @@
     <meta name="twitter:description" content="{{ place.properties.description }}">
 
     {% if place.properties.location_type and place.properties.location_type != "other"%}
-    <meta name="twitter:image:src" content="{{ STATIC_URL }}decals/{{place.properties.location_type}}.png">
+    <meta name="twitter:image:src" content="{{ request.build_absolute_uri|slice:':-1' }}{{ STATIC_URL }}decals/{{place.properties.location_type}}.png">
     {% else %}
-    <meta name="twitter:image:src" content="{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
+    <meta name="twitter:image:src" content="{{ request.build_absolute_uri|slice:':-1' }}{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
     {% endif %}
 
     <!-- Facebook -->
@@ -29,9 +29,9 @@
     <meta property="og:description" content="{{ place.properties.description }}" />
 
     {% if place.properties.location_type and place.properties.location_type != "other"%}
-    <meta name="og:image" content="{{ STATIC_URL }}decals/{{place.properties.location_type}}.png">
+    <meta name="og:image" content="{{ request.build_absolute_uri|slice:':-1' }}{{ STATIC_URL }}decals/{{place.properties.location_type}}.png">
     {% else %}
-    <meta name="og:image" content="{{ STATIC_URL }}css/images/map-screenshot.jpg">
+    <meta name="og:image" content="{{ request.build_absolute_uri|slice:':-1' }}{{ STATIC_URL }}css/images/map-screenshot.jpg">
     {% endif %}
 
   {% else %}
@@ -39,13 +39,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ config.app.title }}">
     <meta name="twitter:description" content="{{ config.app.meta_description }}">
-    <meta name="twitter:image:src" content="{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
+    <meta name="twitter:image:src" content="{{ request.build_absolute_uri|slice:':-1' }}{{ STATIC_URL }}css/images/visionzero-logo-blue-square.png">
 
     <!-- Facebook -->
     <meta property="og:site_name" content="{{ config.app.title }}" />
     <meta property="og:title" content="{{ config.app.title }}" />
     <meta property="og:description" content="{{ config.app.meta_description }}" />
-    <meta name="og:image" content="{{ STATIC_URL }}css/images/map-screenshot.jpg">
+    <meta name="og:image" content="{{ request.build_absolute_uri|slice:':-1' }}{{ STATIC_URL }}css/images/map-screenshot.jpg">
   {% endif%}
 {% endblock %}
 
