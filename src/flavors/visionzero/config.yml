@@ -12,6 +12,9 @@ app:
   # server. If you would like to override the chunk size, use this setting:
   # places_page_size: 100
 
+  # Optional. List view is supported by default. Set to false to disable.
+  list_enabled: false
+
 # Settings for map and layer configs
 map:
   geolocation_enabled: true
@@ -40,15 +43,15 @@ place_types:
           iconSize: [10, 10]
           iconAnchor: [5, 5]
       - condition: '"{{location_type}}" === "doublepark" && {{map.zoom}} >= 15 && {{map.zoom}} < 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/dot-doublepark-m.png
           iconSize: [22, 22]
-          iconAnchor: [11, 11]  
+          iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "doublepark" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-doublepark.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "doublepark" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-doublepark.png
@@ -71,10 +74,10 @@ place_types:
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "jaywalking" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-jaywalking.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "jaywalking" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-jaywalking.png
@@ -97,10 +100,10 @@ place_types:
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "longcross" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-longcross.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "longcross" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-longcross.png
@@ -123,10 +126,10 @@ place_types:
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "longwait" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-longwait.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "longwait" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-longwait.png
@@ -149,10 +152,10 @@ place_types:
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "notime" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-notime.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "notime" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-notime.png
@@ -175,10 +178,10 @@ place_types:
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "redlight" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-redlight.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "redlight" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-redlight.png
@@ -201,10 +204,10 @@ place_types:
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "speeding" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-speeding.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "speeding" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-speeding.png
@@ -227,10 +230,10 @@ place_types:
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "visibility" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-visibility.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "visibility" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-visibility.png
@@ -253,10 +256,10 @@ place_types:
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "yield" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-yield.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "yield" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-yield.png
@@ -279,10 +282,10 @@ place_types:
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "bike" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-bike.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "bike" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-bike.png
@@ -305,10 +308,10 @@ place_types:
           iconSize: [22, 22]
           iconAnchor: [11, 11]
       - condition: '"{{location_type}}" === "other" && {{map.zoom}} >= 17 && {{layer.focused}} === false'
-        icon: 
+        icon:
           iconUrl: /static/css/images/markers/icon-dot-unknown.png
           iconSize: [32, 33]
-          iconAnchor: [16, 16]  
+          iconAnchor: [16, 16]
       - condition: '"{{location_type}}" === "other" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-unknown.png
