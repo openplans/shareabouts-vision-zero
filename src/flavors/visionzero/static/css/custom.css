@@ -242,15 +242,59 @@ a.shareabouts-logo:hover {
 }
 .place-type-list {
 }
+.place-type-list li {
+  position: relative;
+  cursor: default;
+}
 .place-type-list img {
   height: 1.75em;
   width: auto;
   vertical-align: middle;
 }
 
+.place-type-description {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  top: auto;
+  right: 3em;
+  bottom: 100%;
+  left: 0.875em;
+  margin: 0 0 0.75em 0;
+  border-radius: 0.5em 0.5em 0.5em 0;
+  background: #000;
+  color: #fff;
+  font-size: 0.875em;
+  box-shadow: -0.25em 0 1em rgba(255,255,255,0.8);
+  -webkit-transition: opacity .25s ease-in-out;
+     -moz-transition: opacity .25s ease-in-out;
+          transition: opacity .25s ease-in-out;
+}
+.place-type-li:hover .place-type-description {
+  height: auto;
+  padding: 0.5em 0.625em;
+  opacity: 1;
+  overflow: visible;
+}
+.place-type-li:hover .place-type-description:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 0.5em solid transparent;
+  border-top-color: #000;
+  border-left-color: #000;
+}
+
+
 .legend-add-container {
   display: none;
 }
+
 
 /* =Place Type Selector
 -------------------------------------------------------------- */
